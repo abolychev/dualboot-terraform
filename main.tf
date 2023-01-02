@@ -13,3 +13,9 @@ module "security_groups" {
   container_port = var.container_port
 }
 
+module "app" {
+  source      = "./modules/app"
+  name        = var.project
+  environment = var.environment
+}
+
