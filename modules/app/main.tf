@@ -8,3 +8,8 @@ module "cluster" {
   environment = var.environment
 }
 
+module "roles" {
+  source      = "../ecs_roles"
+  environment = var.environment
+}
+
