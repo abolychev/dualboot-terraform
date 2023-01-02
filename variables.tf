@@ -3,6 +3,16 @@ variable "region" {
   type        = string
 }
 
+variable "project" {
+  description = "Project"
+  type        = string
+}
+
+variable "environment" {
+  description = "Environment"
+  type        = string
+}
+
 variable "cidr" {
   description = "The CIDR block for the VPC."
   type        = string
@@ -21,5 +31,10 @@ variable "private_subnets" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
+}
+
+variable "container_port" {
+  description = "Container port"
+  type        = number
 }
 

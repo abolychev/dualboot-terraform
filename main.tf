@@ -6,3 +6,10 @@ module "network" {
   availability_zones = var.availability_zones
 }
 
+module "security_groups" {
+  source         = "./modules/security_groups"
+  name           = "${var.project}-${var.environment}"
+  vpc_id         = module.network.vpc_id
+  container_port = var.container_port
+}
+
