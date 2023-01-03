@@ -14,8 +14,12 @@ module "security_groups" {
 }
 
 module "app" {
-  source      = "./modules/app"
-  name        = var.project
-  environment = var.environment
+  source         = "./modules/app"
+  name           = var.project
+  environment    = var.environment
+  task_cpu       = var.task_cpu
+  task_memory    = var.task_memory
+  image          = var.image
+  container_port = var.container_port
 }
 

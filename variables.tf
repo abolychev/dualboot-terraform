@@ -38,3 +38,18 @@ variable "container_port" {
   type        = number
 }
 
+variable "task_cpu" {
+  description = "Task CPU"
+  type        = number
+}
+
+variable "task_memory" {
+  description = "Task memory"
+  type        = number
+}
+
+variable "image" {
+  description = "Image"
+  type        = string
+}
+
