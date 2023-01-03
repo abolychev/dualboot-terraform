@@ -8,31 +8,13 @@ variable "environment" {
   type        = string
 }
 
-variable "task_cpu" {
-  description = "Task CPU"
-  type        = number
+variable "security_groups" {
+ description = "security_groups"
+ type = list(string)
 }
 
-variable "task_memory" {
-  description = "Memory"
-  type        = number
-}
-
-variable "image" {
-  description = "Image"
-  type        = string
-}
-
-variable "container_port" {
-  description = "Container port"
-  type        = number
-}
-
-variable "vpc_id" {
-  type = string
-}
-
-variable "public_subnets" {
+variable "subnets" {
+  description = "subnets"
   type = list(object({
     arn = string 
     assign_ipv6_address_on_creation = bool
@@ -59,11 +41,14 @@ variable "public_subnets" {
   }))
 }
 
-variable "ecs_sg" {
-  type = list(string)
+variable "vpc_id" {
+ description = "vpc_id"
+ type = string
 }
 
-variable "alb_sg" {
-  type = list(string)
+variable "health_check_path" {
+ description = "health_check_path"
+ type = string
 }
+
 
