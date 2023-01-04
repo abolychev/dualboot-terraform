@@ -58,6 +58,14 @@ variable "container_definitions" {
       containerPort = number
       hostPort      = number
     }))
+    logConfiguration = object({
+      logDriver = string
+      options = object({
+        awslogs-group = string
+        awslogs-region = string
+        awslogs-stream-prefix = string
+      })
+    })
   }))
 }
 

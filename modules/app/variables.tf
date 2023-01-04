@@ -94,3 +94,8 @@ variable "private_subnets" {
   }))
 }
 
+variable "region" {
+  description = "aws region"
+  type        = string
+}
+
