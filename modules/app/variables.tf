@@ -99,3 +99,11 @@ variable "region" {
   type        = string
 }
 
+variable "variables" {
+  type = map(string)
+}
+
+variable "secrets" {
+  type = map(string)
+}
+

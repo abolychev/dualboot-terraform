@@ -11,6 +11,7 @@ module "cluster" {
 module "roles" {
   source      = "../ecs_roles"
   environment = var.environment
+  secrets_arn = module.secrets.arn
 }
 
 module "task_definition" {
@@ -47,6 +48,8 @@ module "task_definition" {
           awslogs-stream-prefix = local.app_name
         }
       }
+      environment = module.variables.map
+      secrets     = module.secrets.map
     }
   ]
 }
@@ -84,5 +87,17 @@ module "logs" {
   environment       = var.environment
   name              = var.name
   retention_in_days = 90
+}
+
+module "variables" {
+  source = "../variables"
+  map    = var.variables
+}
+
+module "secrets" {
+  source      = "../secrets"
+  name        = var.name
+  environment = var.environment
+  secrets     = var.secrets
 }
 

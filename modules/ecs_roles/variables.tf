@@ -3,3 +3,7 @@ variable "environment" {
   type        = string
 }
 
+variable "secrets_arn" {
+  type = list(string)
+}
+

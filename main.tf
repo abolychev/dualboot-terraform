@@ -1,3 +1,9 @@
+locals {
+  variables = {
+    PORT = var.container_port
+  }
+}
+
 module "network" {
   source             = "./modules/network"
   cidr               = var.cidr
@@ -28,5 +34,7 @@ module "app" {
   ecs_sg          = [module.security_groups.ecs_tasks]
   alb_sg          = [module.security_groups.alb]
   region          = var.region
+  variables       = local.variables
+  secrets         = var.secrets
 }
 
