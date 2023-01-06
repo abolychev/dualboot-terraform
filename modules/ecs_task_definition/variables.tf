@@ -40,32 +40,6 @@ variable "task_role_arn" {
 
 variable "container_definitions" {
   description = "Container definitions"
-  type = list(object({
-    name      = string
-    image     = string
-    essential = bool
-    links     = list(string)
-    volumesFrom = list(object({
-      sourceContainer = string
-      readOnly        = bool
-    }))
-    mountPoints = list(object({
-      sourceVolume  = string
-      containerPath = string
-      readOnly      = bool
-    }))
-    portMappings = list(object({
-      containerPort = number
-      hostPort      = number
-    }))
-    logConfiguration = object({
-      logDriver = string
-      options = object({
-        awslogs-group = string
-        awslogs-region = string
-        awslogs-stream-prefix = string
-      })
-    })
-  }))
+  type = list(any)
 }
 
