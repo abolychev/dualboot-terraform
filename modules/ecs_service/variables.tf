@@ -77,3 +77,7 @@ variable "container_name" {
   type = string
 }
 
+variable "enable_execute_command" {
+  type = bool
+}
+
