@@ -1,12 +1,12 @@
 locals {
   region  = "us-east-1"
   project = "infra-study-2023"
-  domain = "infra.md0.ru"
+  domain = "dualboot.click"
 }
 
 inputs = {
   region  = local.region
-  project = local.projecat
+  project = local.project
   domain = local.domain
 }
 

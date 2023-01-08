@@ -36,5 +36,6 @@ module "app" {
   region          = var.region
   variables       = local.variables
   secrets         = var.secrets
+  domain          = var.domain
 }
 
